@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const missionBtn = document.getElementById('survey-btn');
   const alertBtn = document.getElementById('alert-btn');
 
+  // New Input & Output elements
+  const inputField = document.getElementById('user-input');
+  const submitBtn = document.getElementById('submit-btn');
+  const displayArea = document.getElementById('display-text');
+
   // Mission Explosion Button Listener
   if (missionBtn) {
     missionBtn.addEventListener('click', () => {
@@ -22,6 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
         p.textContent = "WARNING: UNEXPLODED ORDNANCE THREAT DETECTED. ALL UNITS CLEAR THE AREA IMMEDIATELY.";
         p.classList.add('red-alert-text');
       });
+    });
+  }
+
+  // Text Input Display Listener
+  if (submitBtn && inputField && displayArea) {
+    submitBtn.addEventListener('click', () => {
+      const userText = inputField.value.trim();
+
+      if (userText !== "") {
+        displayArea.textContent = `DISPATCH RECORDED: "${userText}"`;
+        inputField.value = ""; // Clears input box after transmission
+      } else {
+        displayArea.textContent = "NOTICE: NO DISPATCH TEXT ENTERED.";
+      }
     });
   }
 });
