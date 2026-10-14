@@ -29,7 +29,7 @@ main {
   border: 2px solid #3b4238;
   border-left: 8px solid #a38853;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), inset 0 0 50px rgba(0, 0, 0, 0.4);
-  overflow: hidden; /* Prevents internal elements from leaking outside */
+  overflow: hidden;
 }
 
 /* Headings */
@@ -159,7 +159,6 @@ li::marker {
   transform: translateY(-2px);
 }
 
-/* Decrypt Intel Button */
 #fact-btn {
   margin: 15px 0;
   background-color: #2e352b;
@@ -176,23 +175,82 @@ li::marker {
 
 #fact-btn:active,
 #survey-btn:active,
-#alert-btn:active {
+#alert-btn:active,
+#submit-btn:active {
   transform: translateY(0);
 }
 
-/* Input Container - Auto wraps on tight screens */
+/* Input Container & Controls */
 .input-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin: 25px 0 10px 0;
   width: 100%;
+  align-items: stretch;
 }
 
 #user-input {
-  flex: 1 1 240px; /* Minimum 240px width before wrapping cleanly */
+  flex: 1 1 220px;
   padding: 12px 15px;
   background-color: #181a17;
   color: #dcdfd8;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 1
+  font-size: 16px;
+  border: 2px solid #3b4238;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#user-input:focus {
+  border-color: #a38853;
+}
+
+/* Transmit Dispatch Button Styling */
+#submit-btn {
+  flex: 1 1 140px;
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #3b4238;
+  color: #dcdfd8;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #a38853;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+#submit-btn:hover {
+  background-color: #a38853;
+  color: #181a17;
+  transform: translateY(-1px);
+}
+
+/* Dynamic Dispatch Text & Fact Output */
+.dispatch-output {
+  font-weight: bold;
+  color: #a38853;
+  margin-bottom: 25px;
+  min-height: 24px;
+}
+
+/* Red Alert Transition Class */
+.red-alert-text {
+  transition: color 2s ease;
+  color: #e63946 !important;
+  font-weight: bold;
+}
+
+/* Explosion Overlay Canvas */
+#explosion-canvas {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
