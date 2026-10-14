@@ -244,13 +244,4 @@ li::marker {
 /* Red Alert Transition Class */
 .red-alert-text {
   transition: color 2s ease;
-  color: #e63946 !important;
-  font-weight: bold;
-}
-
-/* Explosion Overlay Canvas */
-#explosion-canvas {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-}
+  color: #e6
