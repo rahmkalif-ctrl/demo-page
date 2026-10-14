@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Red Alert Text Transition Listener
+  // Ordnance Threat Text Transition Listener
   if (alertBtn) {
     alertBtn.addEventListener('click', () => {
       const paragraphs = document.querySelectorAll('main p');
 
       paragraphs.forEach((p) => {
-        p.textContent = "CRITICAL ALERT: DEFENSE LINE BREACHED. ALL UNITS STAND BY FOR IMMEDIATE COMMAND ORDERS.";
+        p.textContent = "WARNING: UNEXPLODED ORDNANCE THREAT DETECTED. ALL UNITS CLEAR THE AREA IMMEDIATELY.";
         p.classList.add('red-alert-text');
       });
     });
