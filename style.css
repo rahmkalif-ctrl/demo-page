@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Web Development</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Link to External CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <!-- Main Header -->
+    <h1>Website about me</h1>
+    
+    <!-- Introduction Paragraph -->
+    <p>Welcome to my website, through this page you will learn about some of my hobbies, my favorite games, as well as some information about me.</p>
+
+    <!-- Game Cover Art Gallery -->
+    <img src="myimage.png" alt="Hell Let Loose game cover art">
+    <img src="images.png" alt="Battlefield 6 cover art">
+    <img src="images (1).jpeg" alt="WWI Gallipoli Ottoman Fronts cover art">
+
+    <!-- Section Heading & Overview -->
+    <h2>Welcome to the next section of my website.</h2>
+    <p>This will cover some information about me, including some of my favorite things to do, my top 3 video games, and a few of my hobbies.</p>
+    
+    <!-- Personal Details & Favorite Games List -->
+    <ol>
+      <li>My name is Rahm and I currently attend the Hun School of Princeton</li>
+      <li>Some of my hobbies include learning about history for instance WW2, and the Napoleonic wars</li>
+      <li>
+        My top 3 video games consist of 
+        <a href="https://www.youtube.com/watch?v=iRI100-iY60" target="_blank" rel="noopener noreferrer">Gallipoli</a>, 
+        <a href="https://www.youtube.com/watch?v=S3hLu58KXg8" target="_blank" rel="noopener noreferrer">Hell Let Loose</a>, and 
+        <a href="https://www.youtube.com/watch?v=PeHxMayIpaI" target="_blank" rel="noopener noreferrer">Battlefield 6</a>.
+      </li>
+    </ol>
+  </main>
+
+</body>
+</html>
