@@ -1,28 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const button = document.getElementById('survey-btn');
+  const missionBtn = document.getElementById('survey-btn');
+  const alertBtn = document.getElementById('alert-btn');
 
-  if (!button) return;
+  // Mission Explosion Button Listener
+  if (missionBtn) {
+    missionBtn.addEventListener('click', () => {
+      const rect = missionBtn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
 
-  button.addEventListener('click', () => {
-    // Get center position of the button on screen
-    const rect = button.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+      playExplosionAnimation(centerX, centerY);
+    });
+  }
 
-    // Trigger the 50-frame canvas explosion
-    playExplosionAnimation(centerX, centerY);
-  });
+  // Red Alert Text Transition Listener
+  if (alertBtn) {
+    alertBtn.addEventListener('click', () => {
+      const paragraphs = document.querySelectorAll('main p');
+
+      paragraphs.forEach((p) => {
+        p.textContent = "CRITICAL ALERT: DEFENSE LINE BREACHED. ALL UNITS STAND BY FOR IMMEDIATE COMMAND ORDERS.";
+        p.classList.add('red-alert-text');
+      });
+    });
+  }
 });
 
 function playExplosionAnimation(x, y) {
-  // Create an overlay canvas element
   const canvas = document.createElement('canvas');
   canvas.id = 'explosion-canvas';
-  const size = 260; // Rendered explosion size in pixels
+  const size = 260;
   canvas.width = size;
   canvas.height = size;
 
-  // Center the canvas over the button click coordinates
   canvas.style.position = 'fixed';
   canvas.style.left = `${x - size / 2}px`;
   canvas.style.top = `${y - size / 2}px`;
@@ -32,27 +42,24 @@ function playExplosionAnimation(x, y) {
   document.body.appendChild(canvas);
   const ctx = canvas.getContext('2d');
 
-  // Load the sprite sheet image
   const img = new Image();
-  img.src = 'explosion.png'; // Points to your renamed image file
+  img.src = 'explosion.png';
 
   img.onload = () => {
-    const cols = 10; // 10 columns wide
-    const rows = 5;  // 5 rows tall
-    const totalFrames = cols * rows; // 50 total frames
+    const cols = 10;
+    const rows = 5;
+    const totalFrames = cols * rows;
     const frameWidth = img.width / cols;
     const frameHeight = img.height / rows;
 
     let currentFrame = 0;
 
-    // Play at ~30 FPS (one frame every 33ms)
     const interval = setInterval(() => {
       ctx.clearRect(0, 0, size, size);
 
       const col = currentFrame % cols;
       const row = Math.floor(currentFrame / cols);
 
-      // Crop current frame from sprite sheet and draw to canvas
       ctx.drawImage(
         img,
         col * frameWidth,
@@ -67,12 +74,10 @@ function playExplosionAnimation(x, y) {
 
       currentFrame++;
 
-      // When the 50-frame sequence completes
       if (currentFrame >= totalFrames) {
         clearInterval(interval);
         canvas.remove();
 
-        // Trigger the post-mission popup
         setTimeout(() => {
           const response = confirm("MISSION ACCOMPLISHED.\nWere you able to view the battlefield intelligence videos?");
           if (response) {
