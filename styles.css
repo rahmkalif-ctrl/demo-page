@@ -135,3 +135,10 @@ li::marker {
 #survey-btn:active {
   transform: translateY(0);
 }
+
+/* Real Explosion Overlay Canvas */
+#explosion-canvas {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
