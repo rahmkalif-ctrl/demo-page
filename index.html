@@ -5,13 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Web Development</title>
   
-  <!-- Google Fonts for WWII Theme -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Page Background */
+    body {
+      background-color: #eef2f5;
+      color: #333333; 
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
 
-  <!-- Link to External CSS File -->
-  <link rel="stylesheet" href="style.css">
+    /* Main Content Card */
+    main {
+      background-color: #ffffff;
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft drop shadow for depth */
+    }
+
+    /* Headings */
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    /* Image Styling */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 20px 0;
+      display: block; /* Prevents unwanted inline gaps under the image */
+    }
+
+    /* Link Styling */
+    a {
+      color: #3498db;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* List Styling */
+    ol {
+      font-size: 17px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -22,6 +87,7 @@
     <!-- Introduction Paragraph -->
     <p>Welcome to my website, through this page you will learn about some of my hobbies, my favorite games, as well as some information about me.</p>
 
+    <!-- Game Cover Art Gallery -->
     <!-- Image 1: Hell Let Loose cover photo -->
     <img src="myimage.png" alt="Hell Let Loose game cover art">
 
@@ -43,7 +109,7 @@
       <!-- Hobbies Info -->
       <li>Some of my hobbies include learning about history for instance WW2, and the Napoleonic wars</li>
       
-      <!-- My top 3 games with YouTube Gameplay Links regarding trailers and new content -->
+      <!-- Top Games with YouTube Gameplay Links -->
       <li>
         My top 3 video games consist of 
         <!-- YouTube trailer link for Gallipoli -->
