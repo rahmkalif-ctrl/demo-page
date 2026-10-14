@@ -7,6 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submit-btn');
   const displayArea = document.getElementById('display-text');
 
+  // Random Fact Generator elements
+  const factBtn = document.getElementById('fact-btn');
+  const factDisplay = document.getElementById('fact-display');
+
+  // Game Facts List
+  const gameFacts = [
+    "HELL LET LOOSE: Maps are built using authentic WWII satellite imagery and archival aerial photography to replicate real battlefields.",
+    "HELL LET LOOSE: Squad leaders and commanders communicate across dedicated tactical radio channels to build garrisons and coordinate artillery.",
+    "GALLIPOLI: Focuses on the intense 1915–1916 WWI campaign across the Dardanelles straits and trench combat on the Ottoman front.",
+    "GALLIPOLI: Logistics and trench raiding tactics played a crucial role in naval-land amphibious operations during the campaign.",
+    "BATTLEFIELD: Known for environmental destructibility, allowing players to breach walls, collapse structures, and alter combat paths.",
+    "BATTLEFIELD: Features large-scale combined arms combat integrating infantry, armored tanks, transport vehicles, and aircraft."
+  ];
+
+  // Random Fact Trigger
+  if (factBtn && factDisplay) {
+    factBtn.addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * gameFacts.length);
+      factDisplay.textContent = `INTEL FILE #${randomIndex + 1}: ${gameFacts[randomIndex]}`;
+    });
+  }
+
   // Mission Explosion Button Listener
   if (missionBtn) {
     missionBtn.addEventListener('click', () => {
