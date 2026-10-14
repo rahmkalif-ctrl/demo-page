@@ -116,9 +116,10 @@ li::marker {
   font-weight: bold;
 }
 
-/* Full Width Buttons */
+/* Full Width Action Buttons */
 #survey-btn,
-#alert-btn {
+#alert-btn,
+#fact-btn {
   display: block;
   width: 100%;
   padding: 14px 20px;
@@ -158,6 +159,27 @@ li::marker {
   transform: translateY(-2px);
 }
 
+/* Decrypt Intel Button */
+#fact-btn {
+  margin: 15px 0;
+  background-color: #2e352b;
+  color: #a38853;
+  border: 2px solid #a38853;
+  font-size: 16px;
+}
+
+#fact-btn:hover {
+  background-color: #a38853;
+  color: #181a17;
+  transform: translateY(-2px);
+}
+
+#fact-btn:active,
+#survey-btn:active,
+#alert-btn:active {
+  transform: translateY(0);
+}
+
 /* Input Container - Auto wraps on tight screens */
 .input-container {
   display: flex;
@@ -173,56 +195,4 @@ li::marker {
   background-color: #181a17;
   color: #dcdfd8;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 16px;
-  border: 2px solid #3b4238;
-  border-radius: 2px;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-
-#user-input:focus {
-  border-color: #a38853;
-}
-
-#submit-btn {
-  flex: 0 0 auto;
-  padding: 12px 20px;
-  background-color: #3b4238;
-  color: #dcdfd8;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border: 2px solid #a38853;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-#submit-btn:hover {
-  background-color: #a38853;
-  color: #181a17;
-}
-
-/* Dynamic Dispatch Text */
-.dispatch-output {
-  font-weight: bold;
-  color: #a38853;
-  margin-bottom: 25px;
-  min-height: 24px;
-}
-
-/* Red Alert Transition Class */
-.red-alert-text {
-  transition: color 2s ease;
-  color: #e63946 !important;
-  font-weight: bold;
-}
-
-/* Explosion Overlay */
-#explosion-canvas {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-}
+  font-size: 1
