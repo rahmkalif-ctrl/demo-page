@@ -105,3 +105,33 @@ li::marker {
   color: #a38853;
   font-weight: bold;
 }
+
+/* Tactical Mission Button */
+#survey-btn {
+  display: block;
+  width: 100%;
+  margin: 25px 0;
+  padding: 14px 20px;
+  background-color: #a38853;
+  color: #181a17;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 2px solid #222621;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+#survey-btn:hover {
+  background-color: #d1b475;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+#survey-btn:active {
+  transform: translateY(0);
+}
