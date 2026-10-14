@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const missionBtn = document.getElementById('survey-btn');
   const alertBtn = document.getElementById('alert-btn');
 
-  // New Input & Output elements
+  // Input & Output elements
   const inputField = document.getElementById('user-input');
   const submitBtn = document.getElementById('submit-btn');
   const displayArea = document.getElementById('display-text');
@@ -30,17 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Text Input Display Listener
+  // Dynamic Input Display using if / else if / else
   if (submitBtn && inputField && displayArea) {
     submitBtn.addEventListener('click', () => {
-      const userText = inputField.value.trim();
+      // Convert input to lowercase to catch keywords regardless of capitalization
+      const userText = inputField.value.trim().toLowerCase();
 
-      if (userText !== "") {
-        displayArea.textContent = `DISPATCH RECORDED: "${userText}"`;
-        inputField.value = ""; // Clears input box after transmission
-      } else {
+      if (userText === "") {
         displayArea.textContent = "NOTICE: NO DISPATCH TEXT ENTERED.";
+      } else if (userText === "red alert" || userText === "alert") {
+        displayArea.textContent = "COMMAND RESPONSE: HIGH ALERT PROTCOLS ACTIVATED. RETREAT TO DEFENSIVE POSITIONS!";
+      } else if (userText === "ww2" || userText === "history") {
+        displayArea.textContent = "INTELLIGENCE BRIEF: RECONNAISSANCE FILE #1944 UNLOCKED. REVIEW GAMES LIST BELOW.";
+      } else if (userText === "gallipoli") {
+        displayArea.textContent = "TACTICAL RECORD: 1915 DARDANELLES CAMPAIGN DOSSIER ACCESSED.";
+      } else {
+        // Fallback for any standard user dispatch entry
+        displayArea.textContent = `DISPATCH RECORDED: "${inputField.value.trim()}"`;
       }
+
+      // Clear the input box after transmission
+      inputField.value = "";
     });
   }
 });
