@@ -1,89 +1,96 @@
-/* Global Page Background - Sleek Light Slate Gradient */
+/* Global Page Background - Trench Dark Slate & Topo Grid */
 body {
-  background: linear-gradient(135deg, #eef2f5 0%, #dbe2e8 100%);
-  color: #1f2937;
+  background-color: #181a17;
+  background-image: 
+    radial-gradient(rgba(100, 110, 95, 0.18) 1px, transparent 0),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 12px 12px, 12px 12px;
+  color: #dcdfd8;
   font-family: 'Times New Roman', Times, serif;
   margin: 0;
-  padding: 50px 20px;
+  padding: 40px 20px;
   line-height: 1.7;
 }
 
-/* Main Content Card - High-Contrast Framing */
+/* Main Content Card - Field Dossier Folder */
 main {
-  background-color: #ffffff;
+  background-color: #222621;
   max-width: 680px;
   margin: 0 auto;
   padding: 40px;
-  border-radius: 8px;
-  border: 1px solid #cbd5e1;
-  border-top: 6px solid #1e293b; /* Bold Dark Slate Top Accent */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  border: 2px solid #3b4238;
+  border-left: 8px solid #a38853; /* Brass Rank Indicator Bar */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), inset 0 0 50px rgba(0, 0, 0, 0.4);
 }
 
-/* Headings */
+/* Headings - Frontline Command Brief */
 h1 {
-  color: #0f172a;
-  font-size: 32px;
+  color: #e6e8e2;
+  font-size: 28px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 3px solid #1e293b;
+  letter-spacing: 3px;
+  border-bottom: 3px double #73806c;
   padding-bottom: 12px;
   margin-top: 0;
 }
 
 h2 {
-  color: #1e293b;
-  font-size: 22px;
+  color: #a38853;
+  font-size: 20px;
   margin-top: 40px;
-  border-bottom: 2px solid #94a3b8;
+  border-bottom: 1px solid #3b4238;
   padding-bottom: 8px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
 }
 
 p {
-  font-size: 19px;
-  color: #334155;
+  font-size: 18px;
+  color: #c5cac0;
 }
 
-/* Images - Clean Framed Cards */
+/* Images - Recon Photo Frames */
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: 2px;
   margin: 25px 0;
   display: block;
-  border: 2px solid #cbd5e1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  border: 3px solid #3b4238;
+  background-color: #181a17;
+  padding: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 img:hover {
-  border-color: #1e293b;
-  transform: translateY(-2px);
+  border-color: #a38853;
+  transform: scale(1.01);
 }
 
-/* Link Styling - Dark Grey Pill Highlights */
+/* Link Styling - Brass Target Highlights */
 a {
-  color: #0f172a;
+  color: #d1b475;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 2px solid #475569;
+  border-bottom: 2px dashed #a38853;
   padding-bottom: 1px;
   transition: all 0.2s ease;
 }
 
 a:hover,
 a:focus {
-  color: #ffffff;
-  background-color: #1e293b;
-  border-bottom-color: #1e293b;
-  border-radius: 4px;
+  color: #181a17;
+  background-color: #a38853;
+  border-bottom-style: solid;
+  border-radius: 2px;
   padding: 2px 6px;
   outline: none;
 }
 
-/* List Styling */
+/* List Styling - Tactical Markers */
 ol {
   font-size: 18px;
   padding-left: 24px;
@@ -91,10 +98,10 @@ ol {
 
 li {
   margin-bottom: 16px;
-  color: #334155;
+  color: #c5cac0;
 }
 
 li::marker {
-  color: #0f172a;
+  color: #a38853;
   font-weight: bold;
 }
