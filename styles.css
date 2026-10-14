@@ -1,9 +1,9 @@
-/* Universal Sizing Reset - Prevents Layout Overflow */
+/* Universal Sizing Reset */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Global Page Background - Trench Dark Slate & Topo Grid */
+/* Global Page Background */
 body {
   background-color: #181a17;
   background-image: 
@@ -18,20 +18,21 @@ body {
   line-height: 1.7;
 }
 
-/* Main Content Card - Field Dossier Folder */
+/* Main Content Card */
 main {
   background-color: #222621;
   max-width: 680px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 30px;
   border-radius: 2px;
   border: 2px solid #3b4238;
-  border-left: 8px solid #a38853; /* Brass Rank Indicator Bar */
+  border-left: 8px solid #a38853;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), inset 0 0 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden; /* Prevents internal elements from leaking outside */
 }
 
-/* Headings - Frontline Command Brief */
+/* Headings */
 h1 {
   color: #e6e8e2;
   font-size: 28px;
@@ -40,12 +41,13 @@ h1 {
   border-bottom: 3px double #73806c;
   padding-bottom: 12px;
   margin-top: 0;
+  word-wrap: break-word;
 }
 
 h2 {
   color: #a38853;
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: 35px;
   border-bottom: 1px solid #3b4238;
   padding-bottom: 8px;
   text-transform: uppercase;
@@ -55,14 +57,16 @@ h2 {
 p {
   font-size: 18px;
   color: #c5cac0;
+  word-wrap: break-word;
 }
 
-/* Images - Recon Photo Frames */
+/* Images */
 img {
+  width: 100%;
   max-width: 100%;
   height: auto;
   border-radius: 2px;
-  margin: 25px 0;
+  margin: 20px 0;
   display: block;
   border: 3px solid #3b4238;
   background-color: #181a17;
@@ -76,7 +80,7 @@ img:hover {
   transform: scale(1.01);
 }
 
-/* Link Styling - Brass Target Highlights */
+/* Links */
 a {
   color: #d1b475;
   font-weight: bold;
@@ -96,7 +100,7 @@ a:focus {
   outline: none;
 }
 
-/* List Styling - Tactical Markers */
+/* Lists */
 ol {
   font-size: 18px;
   padding-left: 24px;
@@ -112,77 +116,59 @@ li::marker {
   font-weight: bold;
 }
 
-/* Tactical Mission Button */
-#survey-btn {
+/* Full Width Buttons */
+#survey-btn,
+#alert-btn {
   display: block;
   width: 100%;
-  margin: 25px 0 15px 0;
   padding: 14px 20px;
-  background-color: #a38853;
-  color: #181a17;
   font-family: 'Times New Roman', Times, serif;
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  border: 2px solid #222621;
   border-radius: 2px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   transition: all 0.2s ease;
+}
+
+#survey-btn {
+  margin: 25px 0 15px 0;
+  background-color: #a38853;
+  color: #181a17;
+  border: 2px solid #222621;
 }
 
 #survey-btn:hover {
   background-color: #d1b475;
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
 }
 
-#survey-btn:active {
-  transform: translateY(0);
-}
-
-/* Red Alert Button */
 #alert-btn {
-  display: block;
-  width: 100%;
   margin: 0 0 25px 0;
-  padding: 14px 20px;
   background-color: #5c2323;
   color: #e6e8e2;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
   border: 2px solid #3b4238;
-  border-radius: 2px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: all 0.2s ease;
 }
 
 #alert-btn:hover {
   background-color: #7a2d2d;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
 }
 
-#alert-btn:active {
-  transform: translateY(0);
-}
-
-/* Input Box and Container Styling */
+/* Input Container - Auto wraps on tight screens */
 .input-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin: 25px 0 10px 0;
   width: 100%;
 }
 
 #user-input {
-  flex: 1;
+  flex: 1 1 240px; /* Minimum 240px width before wrapping cleanly */
   padding: 12px 15px;
   background-color: #181a17;
   color: #dcdfd8;
@@ -198,8 +184,8 @@ li::marker {
   border-color: #a38853;
 }
 
-/* Transmit Button */
 #submit-btn {
+  flex: 0 0 auto;
   padding: 12px 20px;
   background-color: #3b4238;
   color: #dcdfd8;
@@ -211,7 +197,6 @@ li::marker {
   border: 2px solid #a38853;
   border-radius: 2px;
   cursor: pointer;
-  white-space: nowrap;
   transition: all 0.2s ease;
 }
 
@@ -220,7 +205,7 @@ li::marker {
   color: #181a17;
 }
 
-/* Dispatch Output Message */
+/* Dynamic Dispatch Text */
 .dispatch-output {
   font-weight: bold;
   color: #a38853;
@@ -228,14 +213,14 @@ li::marker {
   min-height: 24px;
 }
 
-/* Smooth Red Color Transition for Text */
+/* Red Alert Transition Class */
 .red-alert-text {
   transition: color 2s ease;
   color: #e63946 !important;
   font-weight: bold;
 }
 
-/* Real Explosion Overlay Canvas */
+/* Explosion Overlay */
 #explosion-canvas {
   position: fixed;
   pointer-events: none;
